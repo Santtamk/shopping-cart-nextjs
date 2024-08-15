@@ -1,5 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import NavBar from "./components/NavBar";
+import { Store, StoreProvider } from "./CartContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +13,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} bg-gray`}>
+        <StoreProvider>
+          <NavBar />
+          <hr className="mx-6 mt-2 mb-2 flex justify-between lg:mx-10 lg:mt-4 text-black" />
+          {children}
+        </StoreProvider>
+      </body>
     </html>
   );
 }
