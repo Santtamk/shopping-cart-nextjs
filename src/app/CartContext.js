@@ -14,11 +14,10 @@ const StoreProvider = ({ children }) => {
       const existingItem = prevCart.find((cartItem) => cartItem.id === item.id);
       if (existingItem) {
         //if the item already exists, do not add it again
-        //removeonbuild   
+        //removeonbuild
         // console.log("item already exists in cart:", item);
         //add snackbar, that says"item already in cart, you can visit your cart to change quantity"
         toast.info("Item already in cart. Visit your cart to change quantity.");
-
         return prevCart;
       } else {
         toast.success("Item added to cart");
@@ -44,7 +43,7 @@ const StoreProvider = ({ children }) => {
   return (
     <Store.Provider value={{ cart, addToCart }}>
       {children}
-      <ToastContainer />;
+      <ToastContainer />
     </Store.Provider>
   );
 };
