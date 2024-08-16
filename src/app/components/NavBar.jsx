@@ -5,8 +5,8 @@ import { Store } from "../CartContext";
 import Link from "next/link";
 
 const NavBar = () => {
-  //try to change font for the logo
-  const { cart } = useContext(Store);
+//nav includes logo and cart with count
+  const { cart } = useContext(Store);//cart count
 
   return (
     <div className="">

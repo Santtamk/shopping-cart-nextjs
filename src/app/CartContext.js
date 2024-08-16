@@ -4,6 +4,10 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Store = createContext("");
+// includes add to cart function
+// remove
+//increment & decrement quantity in cart
+//getcart from localStorage and setcart on addtocart
 
 const StoreProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
@@ -14,7 +18,7 @@ const StoreProvider = ({ children }) => {
         try {
           setCart(JSON.parse(savedCart));
         } catch (error) {
-          console.error("Failed to parse cart from localStorage", error);
+          console.error("Failed to get cart from localStorage", error);
           localStorage.removeItem("cart");
         }
       }
@@ -85,7 +89,6 @@ const StoreProvider = ({ children }) => {
     });
   };
 
-  
   return (
     <Store.Provider
       value={{ cart, addToCart, removeFromCart, increment, decrement }}

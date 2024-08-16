@@ -6,7 +6,7 @@ const Card = ({ item }) => {
 
   return (
     <div
-      className="bg-white sm:max-w-[15rem] md:max-w-full
+      className="bg-white sm:max-w-[24rem] md:max-w-full
        flex flex-col md:flex-row md:mb-2 sm:mx-0 lg:mx-10 md:mx-10 md:rounded-sm shadow-xl"
     >
       <img
